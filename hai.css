@@ -1,0 +1,76 @@
+body {
+    display:  flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+}
+body{
+    background-image: url("C:\Users\aravi\OneDrive\画像\pics\b3.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeats;
+    background-color:aliceblue;
+
+}
+h1 {
+    color: #090808;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+img{
+    max-width: 100%;
+    height: auto;
+
+}
+a{
+    color: #000000;
+    text-decoration: underline;
+}
+.form-container{
+    margin: top 200px;
+}
+.dropdown
+{
+    position: relative;
+    display: inline-block;
+}
+.dropbtn{
+    background-color: #736e6e;
+    color: white;
+    padding: 12px;
+    font-size: 14px;
+    border: rgb(9, 9, 9);
+    cursor: pointer;
+}
+.dropdown-content{
+    display: none;
+    position: absolute;
+    background-color: #a49898;
+    min-width: 560px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0,2);
+    z-index: 0;
+    transition: max-height 0.2s ease-out;
+    max-height: 0;
+    overflow: hidden;
+}
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #999696;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    max-height: 2000px; /* Adjust as needed */ /*to print the all dropdown content */
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #070807;
+}

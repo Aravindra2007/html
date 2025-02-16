@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Birthday Surprise</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(to bottom right, #ff9a9e, #fad0c4);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .container {
+      text-align: center;
+      opacity: 0;
+      animation: fadeIn 3s forwards 1s;
+    }
+    h1 {
+      font-size: 3rem;
+      color: white;
+      margin-bottom: 1rem;
+    }h2{
+        color: white;
+    }
+    p {
+      font-size: 1.5rem;
+      color: #fff;
+    }
+    .balloon {
+      position: absolute;
+      bottom: -100px;
+      width: 50px;
+      height: 70px;
+      background-color: red;
+      border-radius: 50%;
+      animation: float 6s infinite;
+    }
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+    @keyframes float {
+      0% {
+        transform: translateY(0);
+      }
+      100% {
+        transform: translateY(-110vh);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>🎉 Happy Birthday! 🎉</h1>
+    <h2> AKKA </h2>
+    <p>May your day be filled with love, laughter, and joy!</p>
+  </div>
+
+  <!-- Balloons -->
+  <div class="balloon" style="left: 20%; animation-delay: 0s; background: #ff6b6b;"></div>
+  <div class="balloon" style="left: 40%; animation-delay: 2s; background: #feca57;"></div>
+  <div class="balloon" style="left: 60%; animation-delay: 1s; background: #54a0ff;"></div>
+  <div class="balloon" style="left: 80%; animation-delay: 3s; background: #1dd1a1;"></div>
+
+  <script>
+    // Surprise Alert after 5 seconds
+    setTimeout(() => {
+      alert("🎂 Make a wish and have the best birthday ever! 🎂");
+    }, 5000);
+  </script>
+
+</body>
+</html>

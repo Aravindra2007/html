@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"> 
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title> ATM Simulation </title>
+        <style>
+            body{
+                font-family: 'Arial', sans-serif;
+                background: rgb(164, 161, 161);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+            }
+            .atm{
+                background: black;
+                color:aliceblue;
+                padding: 20px;
+                border-radius: 8px;
+                width: 500px;
+                text-align: center;
+                box-shadow: 0 4px 10px rgba(0, 0, 0,0.2);
+            }
+            .screen{
+                background: rgb(11, 10, 10);
+                color: green;
+                padding: 20px;
+                height: 150px;
+                width: auto;
+                border-radius: 8px;
+                margin-bottom: 20px;
+                overflow: hidden;
+            }
+            .button i::before{
+                content: "";
+                position: absolute;
+                width: 10px;
+                height: 2px;
+                left: 80%;
+                top: -2px;
+                border: 2px solid var(--clr);
+                background: #272822;
+                transition: 0.3s;
+            }
+            .button:hover{
+                background: #2980b9;    
+            }
+        </style>
+    </head>
+    <body>
+
+        <div class="atm">
+            <div class ="screen" id ="screen" >Welcome to the ATM</div>
+            <button class="button" onclick="deposit()">Deposit</button>
+            <button class="button" onclick="withdraw()">Withdraw</button>
+            <button class="button" onclick="checkbalance()">checkBalance</button>
+        </div>
+
+        <script>
+            let balance = 2000;
+            
+            function deposit(){
+                let amount = prompt(" enter the amount ");
+                if(amount !== null && amount > 0 && parseFloat(amount)>0){
+                    balance += parseFloat(amount);
+                    updatescreen(" Deposite succefully new balance :"+balance);
+                    updatescreen("        THANK YOU       Visit Again ");
+                } 
+                else
+                {
+                    updatescreen(" Invalid amount ");
+                    updatescreen(" Plz TRY AGAIN ");
+                }
+            }
+
+            function withdraw(){
+                let amount = prompt(" enter the amount u want withdrawl : ");
+                if (amount<=balance && amount > 0  && parseFloat(amount)>0){
+                    balance -= parseFloat(amount);
+                    updatescreen(" withdrawl successfully new Balance amount is : "+balance);
+                    updatescreen("            THANK YOU      Visit Again    ");
+                }
+                else{
+                    updatescreen(" invalid amount ");
+                }
+            }
+
+            function checkbalance(){
+                updatescreen(" your account balance is : "+balance);
+                updatescreen("   THANK YOU     Visit Again ");  
+            }
+            function updateScreen(message){
+                document.getElementById("screen").innerText = message;
+            }
+
+        </script>
+    </body>
+</html>

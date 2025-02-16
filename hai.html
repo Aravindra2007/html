@@ -1,30 +1,43 @@
 <!DOCTYPE html>
 <html lang = "eng">
-<head>    <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Ravaan Kingdom</title>
-        <style>
-            body {
-                text-align: center;
+<head>  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ravaan</title>
+    <link rel="stylesheet" href="hai.css">
+    <script>
+               function checkPassword() {
+            var password = prompt("Please enter the password:");
+            if (password !== "7702") {
+                alert("Incorrect password. Access denied.");
+                document.body.style.display = "none";
+            } else {
+                document.body.style.display = "block";
             }
-        </style>
+        }
+        window.onload = checkPassword;
+    </script>
 </head>
-<body>
+<body style="display:none;">
                                
     <h1> aravind kumar </h1>
-    <h2> muthukur village </h2>
-    <h3> aspari vaillage </h3>
-    <h3> kurnool district </h3>
-    <p> VIt - AP University </p>
-    <p> (Beside AP secretariat) </p>
-    <p>NEar vijayawada Guntur </p>
+    <h1> Welcome to my website </h1>
 
-    <img src="C:\Users\aravi\OneDrive\画像\pics\joker.jpg" alt="Description of image"><br><br>
+    <img src="C:\Users\aravi\OneDrive\画像\pics\joker.jpg" alt="quation"><br><br>
+    <a href="https://www.instagram.com" target="blank">instagram</a><br><br>
+    <a href="https://www.facebook.com" target="blank">facebook</a><br><br>
+    <a href="https://www.whatsapp.com" target="blank">whatsapp</a><br><br>
+    <a href="https://vtop.vitap.ac.in/vtop/open/page" target="blank">vitop</a><br><br>
+    <a href="https://vtop.vitap.ac.in/vtop/content?" target="blank">vitop content</a><br><br>
+    
+    
 
-    <label for = "name">Name:</label>
-    <input type = "text" id = "name" name="name"><br><br>
-    <label for = "email">Email:</label>
-    <input type = "text " id = "email" name="email"><br><br>
-    <input type = "submit" value = "submit">
+    <div class = "form-container">
+        <label for = "name">Name:</label>
+        <input type = "text" id = "name" name="name"><br><br>
+        <label for = "email">Email:</label>
+        <input type = "text " id = "email" name="email"><br><br>
+        <input type = "submit" value = "submit">
+    </div>
 </body> 
 </html>

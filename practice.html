@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATM Machine Simulation</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .atm {
+            background: #2c3e50;
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            width: 300px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        .screen {
+            background: black;
+            color: lime;
+            padding: 15px;
+            height: 100px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+        .button {
+            padding: 10px 20px;
+            margin: 5px;
+            background: #3498db;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .button:hover {
+            background: #2980b9;
+        }
+    </style>
+</head>
+<body>
+
+<div class="atm">
+    <div class="screen" id="screen">Welcome to the ATM</div>
+    <button class="button" onclick="deposit()">Deposit</button>
+    <button class="button" onclick="withdraw()">Withdraw</button>
+    <button class="button" onclick="checkBalance()">Check Balance</button>
+</div>
+
+<script>
+    let balance = 1000; // Initial balance
+
+    function deposit() {
+        let amount = prompt("Enter amount to deposit:");
+        if (amount !== null && !isNaN(amount) && parseFloat(amount) > 0) {
+            balance += parseFloat(amount);
+            updateScreen("Deposit successful! New balance: $" + balance);
+        } else {
+            updateScreen("Invalid amount.");
+        }
+    }
+
+    function withdraw() {
+        let amount = prompt("Enter amount to withdraw:");
+        if (amount !== null && !isNaN(amount) && parseFloat(amount) > 0) {
+            if (amount <= balance) {
+                balance -= parseFloat(amount);
+                updateScreen("Withdrawal successful! New balance: $" + balance);
+            } else {
+                updateScreen("Insufficient funds.");
+            }
+        } else {
+            updateScreen("Invalid amount.");
+        }
+    }
+
+    function checkBalance() {
+        updateScreen("Current balance: $" + balance);
+    }
+
+    function updateScreen(message) {
+        document.getElementById("screen").innerText = message;
+    }
+</script>
+
+</body>
+</html>
